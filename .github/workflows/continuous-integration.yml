@@ -126,6 +126,8 @@ jobs:
 
       - name: "Upload Code Coverage"
         uses: "codecov/codecov-action@v1"
+        with:
+          flags: "${{ github.job }},php-${{ matrix.php-version }}"
 
   phpunit-oci8:
     name: "PHPUnit on OCI8"
@@ -171,6 +173,8 @@ jobs:
 
       - name: "Upload Code Coverage"
         uses: "codecov/codecov-action@v1"
+        with:
+          flags: "${{ github.job }},php-${{ matrix.php-version }}"
 
   phpunit-pdo-oci:
     name: "PHPUnit on PDO_OCI"
@@ -216,6 +220,8 @@ jobs:
 
       - name: "Upload Code Coverage"
         uses: "codecov/codecov-action@v1"
+        with:
+          flags: "${{ github.job }},php-${{ matrix.php-version }}"
 
   phpunit-postgres:
     name: "PHPUnit with PostgreSQL"
@@ -276,6 +282,8 @@ jobs:
 
       - name: "Upload Code Coverage"
         uses: "codecov/codecov-action@v1"
+        with:
+          flags: "${{ github.job }},php-${{ matrix.php-version }},postgres-${{ matrix.postgres-version }}"
 
   phpunit-mariadb:
     name: "PHPUnit with MariaDB"
@@ -338,6 +346,8 @@ jobs:
 
       - name: "Upload Code Coverage"
         uses: "codecov/codecov-action@v1"
+        with:
+          flags: "${{ github.job }},php-${{ matrix.php-version }},mariadb-${{ matrix.mariadb-version }},${{ matrix.extension }}"
 
   phpunit-mysql:
     name: "PHPUnit with MySQL"
@@ -413,6 +423,8 @@ jobs:
 
       - name: "Upload Code Coverage"
         uses: "codecov/codecov-action@v1"
+        with:
+          flags: "${{ github.job }},php-${{ matrix.php-version }},mysql-${{ matrix.mysql-version }},${{ matrix.extension }}"
 
   phpunit-mssql:
     name: "PHPUnit with SQL Server"
@@ -480,6 +492,8 @@ jobs:
 
       - name: "Upload Code Coverage"
         uses: "codecov/codecov-action@v1"
+        with:
+          flags: "${{ github.job }},php-${{ matrix.php-version }},${{ matrix.extension }}"
 
   phpunit-ibm-db2:
     name: "PHPUnit with IBM DB2"
@@ -541,6 +555,8 @@ jobs:
 
       - name: "Upload Code Coverage"
         uses: "codecov/codecov-action@v1"
+        with:
+          flags: "${{ github.job }},php-${{ matrix.php-version }}"
 
   development-deps:
     name: "PHPUnit with SQLite and development dependencies"
